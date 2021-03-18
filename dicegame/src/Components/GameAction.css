@@ -1,0 +1,42 @@
+.actionDiv{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 550px;
+    width: 200px;
+    border: solid black;
+    margin-left: 350px;
+
+}
+
+.btn{
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+.btn i{
+    margin-right: 10px;
+}
+
+.downButtons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.dice{
+    width: 90px;
+    height: 90px;
+    border: solid blue;
+    background-color: white;
+    margin-bottom: 10px;
+}
+

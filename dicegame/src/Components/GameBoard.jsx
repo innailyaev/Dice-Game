@@ -11,11 +11,12 @@ class GameBoard extends react.Component{
         super();
         this.state={
             scoreToWin:100,
-            finalScore:null,
             rightSide:'lightblue',
             leftSide:'',
-            dice:[1,1],
+            popUpDisplay:'none',
+            dice:[0,0],
             playerTurn:1,
+            winner:'',
             players:[
                 {
                     id:1,
@@ -51,20 +52,18 @@ class GameBoard extends react.Component{
     }
 
     HoldScore=()=>{
-        console.log("hi i'm hold youe score");
         this.state.playerTurn===1?this.holdHelpFunction(0,2,'lightblue','white') : this.holdHelpFunction(1,1,'white','lightblue');
-
-
     }
 
     holdHelpFunction=(i,turn,str1,str2)=>{
         let players=this.state.players;
         players[i].totalScore+=players[i].currentScore;
         players[i].currentScore=0;
-            this.setState({players:players, playerTurn:turn,leftSide:str1,rightSide:str2});
         if(players[i].totalScore>=this.state.scoreToWin){
-            console.log("player",players[i].id,"hi you won");
+            this.setState({popUpDisplay:'block',winner:players[i].id})
         }
+
+        this.setState({players:players, playerTurn:turn,leftSide:str1,rightSide:str2});
     }
 
     NewGame=()=>{
@@ -74,6 +73,7 @@ class GameBoard extends react.Component{
             scoreToWin:100,
             rightSide:'lightblue',
             leftSide:'',
+            popUpDisplay:'none',
             dice:[1,1],
             playerTurn:1,
             players:players
@@ -81,22 +81,38 @@ class GameBoard extends react.Component{
     }
 
     inputScore=(value)=>{
-        console.log("im from board game",value);
+        this.setState({scoreToWin: value});
+        console.log("board",value);
+    }
+
+    closeButton=()=>{
+        this.setState({popUpDisplay:'none'})
+        this.NewGame();
     }
 
     render(){
         console.log("rander");
         return(
-            <div className="GameBoard">
-                <div className="leftSide" style={{backgroundColor:this.state.rightSide}}>
-                    <div className="player"><Player name="PLAYER 1" totalScore={this.state.players[0].totalScore} currentScore={this.state.players[0].currentScore}/></div>
-                    <div className="GameActions"><GameActions changeDice={this.ChangeDice} diceNumber={this.state.dice} hold={this.HoldScore} newGame={this.NewGame} scoreToWin={this.state.finalScore} inputScore={this.inputScore}/></div>
-                </div>
-                <div className="rightSide" style={{backgroundColor:this.state.leftSide}}>
-                <div className="player"><Player name="PLAYER 2" totalScore={this.state.players[1].totalScore} currentScore={this.state.players[1].currentScore}/></div>
+            <div>
+                <div className="GameBoard">
+                    <div className="leftSide" style={{backgroundColor:this.state.rightSide}}>
+                        <div className="player"><Player name="PLAYER 1" totalScore={this.state.players[0].totalScore} currentScore={this.state.players[0].currentScore}/></div>
+                        <div className="GameActions"><GameActions changeDice={this.ChangeDice} diceNumber={this.state.dice} hold={this.HoldScore} newGame={this.NewGame} inputScore={this.inputScore}/></div>
+                    </div>
+                    <div className="rightSide" style={{backgroundColor:this.state.leftSide}}>
+                    <div className="player"><Player name="PLAYER 2" totalScore={this.state.players[1].totalScore} currentScore={this.state.players[1].currentScore}/></div>
+                    </div>
                 </div>
 
+                <div id="myPopUpBox" className="PopUp" style={{display:this.state.popUpDisplay}}>
+                    <div className="PopUpContent">
+                        <span className="close" onClick={this.closeButton}>&times;</span>
+                        <div className='mainDiv'><p>Player {this.state.winner}</p></div>
+                    </div>
+                </div>
+                         
             </div>
+            
         )
     }
 }

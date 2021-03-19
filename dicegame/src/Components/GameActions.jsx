@@ -33,7 +33,7 @@ class GameActions extends react.Component{
                     <GameButton sign="fas fa-sync" text="ROLL DICE" btnClickFunction={this.ChangeDice}/>
                     <GameButton sign="far fa-caret-square-down" text="HOLD" btnClickFunction={this.props.hold}/>
                 </div>
-                <ScoreInput finalScore={this.props.scoreToWin} inputChange={this.inputChange}/>
+                <ScoreInput inputChange={this.inputChange}/>
             </div>
         )
     }

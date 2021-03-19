@@ -12,14 +12,18 @@ class ScoreInput extends react.Component{
 
     handleChange=(e)=>{
         let value=e.target.value;
-        console.log("value",value);
+        console.log("value", typeof value);
+        if(value===''){
+            value=100;
+        }
+            
         this.props.inputChange(value);
     }
 
     render(){
         return(
             <>
-                <input className="scoreInput" type="text" placeholder="FINAL SCORE" value={this.props.finalScore} onChange={this.handleChange}/>
+                <input className="scoreInput" type="text" placeholder='FINAL SCORE' onChange={this.handleChange}/>
             </>
         )
     }

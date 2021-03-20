@@ -14,7 +14,7 @@ class PlayerDetails extends react.Component{
         
             return(
                 <div>
-                    <p>{this.props.name}</p>
+                    <p className="playerName">{this.props.name}</p>
                     <div className="totalScore">{this.props.totalScore}</div>
                 </div>
             )  

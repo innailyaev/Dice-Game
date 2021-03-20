@@ -11,8 +11,8 @@ class GameBoard extends react.Component{
         super();
         this.state={
             scoreToWin:100,
-            rightSide:'lightblue',
-            leftSide:'',
+            rightSide:'#fcd5ce',
+            leftSide:'#f1aea6',
             popUpDisplay:'none',
             dice:[0,0],
             playerTurn:1,
@@ -40,7 +40,7 @@ class GameBoard extends react.Component{
         if(diceNum1===6 && diceNum2===6){
             players.forEach((p)=>p.currentScore=0);
             this.setState({players:players})
-            this.state.playerTurn===1? this.setState({playerTurn:2,leftSide:'lightblue',rightSide:'white'}) : this.setState({playerTurn:1,leftSide:'white',rightSide:'lightblue' }) 
+            this.state.playerTurn===1? this.setState({playerTurn:2,rightSide:'#f1aea6',leftSide:'#fcd5ce'}) : this.setState({playerTurn:1,leftSide:'#f1aea6',rightSide:'#fcd5ce' }) 
         }
         else (this.state.playerTurn===1)? this.diceHelpFunction(0,diceNum1,diceNum2): this.diceHelpFunction(1,diceNum1,diceNum2)
     }
@@ -52,7 +52,7 @@ class GameBoard extends react.Component{
     }
 
     HoldScore=()=>{
-        this.state.playerTurn===1?this.holdHelpFunction(0,2,'lightblue','white') : this.holdHelpFunction(1,1,'white','lightblue');
+        this.state.playerTurn===1?this.holdHelpFunction(0,2,'#fcd5ce','#f1aea6') : this.holdHelpFunction(1,1,'#f1aea6','#fcd5ce');
     }
 
     holdHelpFunction=(i,turn,str1,str2)=>{
@@ -71,11 +71,12 @@ class GameBoard extends react.Component{
         players.forEach((p)=>{p.currentScore=0;p.totalScore=0});
         this.setState({
             scoreToWin:100,
-            rightSide:'lightblue',
-            leftSide:'',
+            rightSide:'#fcd5ce',
+            leftSide:'#f1aea6',
             popUpDisplay:'none',
-            dice:[1,1],
+            dice:[0,0],
             playerTurn:1,
+            winner:'',
             players:players
         })
     }
@@ -95,12 +96,12 @@ class GameBoard extends react.Component{
         return(
             <div>
                 <div className="GameBoard">
-                    <div className="leftSide" style={{backgroundColor:this.state.rightSide}}>
+                    <div className="leftSide" style={{background: this.state.leftSide}}>
                         <div className="player"><Player name="PLAYER 1" totalScore={this.state.players[0].totalScore} currentScore={this.state.players[0].currentScore}/></div>
                         <div className="GameActions"><GameActions changeDice={this.ChangeDice} diceNumber={this.state.dice} hold={this.HoldScore} newGame={this.NewGame} inputScore={this.inputScore}/></div>
                     </div>
-                    <div className="rightSide" style={{backgroundColor:this.state.leftSide}}>
-                    <div className="player"><Player name="PLAYER 2" totalScore={this.state.players[1].totalScore} currentScore={this.state.players[1].currentScore}/></div>
+                    <div className="rightSide" style={{background:this.state.rightSide}}>
+                        <div className="player"><Player name="PLAYER 2" totalScore={this.state.players[1].totalScore} currentScore={this.state.players[1].currentScore}/></div>
                     </div>
                 </div>
 

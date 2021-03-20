@@ -12,7 +12,7 @@ class CurrentScore extends react.Component{
         
             return(
                 <div className="currentScore">
-                    <p>Current</p>
+                    Current<br></br>
                     {this.props.currentScore}
                 </div>
             )  

@@ -6,13 +6,14 @@
     flex-direction: column;
     height: 550px;
     width: 200px;
-    border: solid black;
     margin-left: 350px;
 
 }
 
 .btn{
-    width: 130px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 23px;
+    width: 150px;
     height: 40px;
     text-align: center;
     cursor: pointer;
@@ -35,9 +36,9 @@
 .dice{
     width: 90px;
     height: 90px;
-    border: solid blue;
     background-color: white;
     margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .scoreInput{

@@ -1,4 +1,11 @@
 .totalScore{
     font-size: 100px;
     font-weight: lighter;
+    color: #8f3a4b;
+}
+
+.playerName{
+    font-size: 60px;
+    margin: 0;
+    color: #8f3a4b;
 }

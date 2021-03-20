@@ -63,13 +63,14 @@
   color: #e45d4e;
   font-family: 'Indie Flower', cursive;
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
+
 }
 
 .gifClass p{
   font-family: 'Indie Flower', cursive;
-  margin-top: 280px;
-  font-size: 25px;
+  margin-top: 300px;
+  font-size: 30px;
   text-align: center;
   color: white;
 }

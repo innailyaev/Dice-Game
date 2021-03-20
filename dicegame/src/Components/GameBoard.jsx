@@ -3,17 +3,18 @@ import "./GameBoard.css";
 import GameActions from "./GameActions";
 import Player from "./Player";
 
-
 class GameBoard extends react.Component{
-
+    
     constructor(props){
         console.log("constructor");
-        super();
+        
+        super(props);
         this.state={
             scoreToWin:100,
             rightSide:'#fcd5ce',
             leftSide:'#f1aea6',
             popUpDisplay:'none',
+            gifDisplay:'none',
             dice:[0,0],
             playerTurn:1,
             winner:'',
@@ -41,6 +42,12 @@ class GameBoard extends react.Component{
             players.forEach((p)=>p.currentScore=0);
             this.setState({players:players})
             this.state.playerTurn===1? this.setState({playerTurn:2,rightSide:'#f1aea6',leftSide:'#fcd5ce'}) : this.setState({playerTurn:1,leftSide:'#f1aea6',rightSide:'#fcd5ce' }) 
+            this.setState({gifDisplay:'block'});
+            setTimeout(
+                ()=> {
+                    this.setState({gifDisplay:'none'})
+                   
+                },4000)
         }
         else (this.state.playerTurn===1)? this.diceHelpFunction(0,diceNum1,diceNum2): this.diceHelpFunction(1,diceNum1,diceNum2)
     }
@@ -111,6 +118,8 @@ class GameBoard extends react.Component{
                         <div className='mainDiv'><p>Player {this.state.winner}</p></div>
                     </div>
                 </div>
+
+                <div className="gifClass" style={{display:this.state.gifDisplay}}><h2>You got 2 sixes</h2><p>Your turn has passed<br></br> to the other player</p></div>
                          
             </div>
             

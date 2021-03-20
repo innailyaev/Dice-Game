@@ -3,6 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url('https://t4.ftcdn.net/jpg/02/28/19/67/360_F_228196735_gAAEfkUfwUCmBAkfuyO1zuOEqwxnuQxQ.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 

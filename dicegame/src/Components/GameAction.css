@@ -4,16 +4,15 @@
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    height: 550px;
-    width: 200px;
-    margin-left: 350px;
-
+    height: 80vh;
+    width: 300px;
+    margin-left: 520px;
 }
 
 .btn{
     font-family: 'Indie Flower', cursive;
-    font-size: 23px;
-    width: 150px;
+    font-size: 30px;
+    width: 200px;
     height: 40px;
     text-align: center;
     cursor: pointer;
@@ -34,16 +33,24 @@
 }
 
 .dice{
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
     background-color: white;
     margin-bottom: 10px;
     border-radius: 10px;
 }
 
 .scoreInput{
-    height: 30px;
-    width: 110px;
+    font-family: 'Indie Flower', cursive;
+    height: 50px;
+    width: 170px;
     text-align: center;
+    font-size: 30px;
+    border: none;
+    border-bottom: solid #e45d4e;
+    border-bottom-width: 5px;
+    background: transparent;
+    outline: none;
+    
 }
 

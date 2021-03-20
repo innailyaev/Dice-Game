@@ -9,3 +9,30 @@
     margin: 0;
     color: #8f3a4b;
 }
+
+/* Rasponsive */
+@media (max-width: 500px){
+
+    .totalScore{
+        font-size: 50px;
+    }
+    
+    .playerName{
+        font-size: 30px;
+        margin: 0px;
+    }
+
+}
+
+@media(min-width:501px) and (max-width: 768px){
+
+    .totalScore{
+        font-size: 55px;
+    }
+    
+    .playerName{
+        font-size: 35px;
+        margin: 0px;
+    }
+
+}

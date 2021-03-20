@@ -1,13 +1,96 @@
 .App {
+  font-family: 'Indie Flower', cursive;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url('https://t4.ftcdn.net/jpg/02/28/19/67/360_F_228196735_gAAEfkUfwUCmBAkfuyO1zuOEqwxnuQxQ.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: rgb(181, 131, 141);
 }
 
+.titleImage{
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+}
+
+h1{
+  font-size: 70px;
+  font-weight: bold;
+  color: white;
+}
+
+.diceImg{
+  background: url("https://www.graphicsprings.com/filestorage/stencils/0ea5e6cba136007831130e3461b92db1.png?width=500&height=500");
+  height: 120px;
+  width: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.whiteDiceImg{
+  position: absolute;
+  margin-left: 75vw;
+  margin-top: 550px;
+  height: 350px;
+  width: 350px;
+  background: url('./Components/diceWhite.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Rasponsive */
+@media (max-width: 500px){
+  .App{
+    flex-direction: column;
+  }
+
+  h1{
+    font-size: 40px;
+    height: fit-content;
+  }
+  
+  .App .diceImg{
+    height: 65px;
+    width: 65px;
+    
+  }
+
+  .whiteDiceImg{
+    height: 80px;
+    width: 80px;
+  }
+}
+
+@media(min-width:501px) and (max-width: 768px){
+  .App{
+    flex-direction: column;
+  }
+
+  .titleImage{
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+  }
+
+  h1{
+    font-size: 40px;
+    height: fit-content;
+  }
+  
+  .App .diceImg{
+    height: 65px;
+    width: 65px;
+    
+  }
+
+  .whiteDiceImg{
+    margin-top: 290px;
+    margin-left: 80vw;
+    height: 90px;
+    width: 90px;
+  }
+}
 
 
 

@@ -21,7 +21,6 @@ class GameActions extends react.Component{
             },25)
 
         let audio =new Audio(sound);
-        
         let diceNum1=Math.floor(Math.random() * 6) + 1;
         let diceNum2=Math.floor(Math.random() * 6) + 1;
         this.props.changeDice(diceNum1,diceNum2);

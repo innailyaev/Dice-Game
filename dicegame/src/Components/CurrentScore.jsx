@@ -7,7 +7,6 @@ class CurrentScore extends react.Component{
         super(); 
     }
 
-    
     render(){
         
             return(

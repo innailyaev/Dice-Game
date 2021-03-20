@@ -1,16 +1,12 @@
 import react from 'react';
 import "./GameAction.css";
 
-
-
-
 class GameButton extends react.Component{
 
     constructor(props){
         super();
     }
 
-    
     render(){
         return(
             <>

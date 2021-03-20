@@ -5,14 +5,11 @@ class ScoreInput extends react.Component{
 
     constructor(props){
         super();
-        this.state={
-            inputValue:null,
-        }
+        
     }
 
     handleChange=(e)=>{
         let value=e.target.value;
-        console.log("value", typeof value);
         if(value===''){
             value=100;
         }
@@ -23,7 +20,7 @@ class ScoreInput extends react.Component{
     render(){
         return(
             <>
-                <input className="scoreInput" type="text" placeholder='FINAL SCORE' onChange={this.handleChange}/>
+                <input id="scoreInput" className="scoreInput" type="text" placeholder='FINAL SCORE' onChange={this.handleChange}/>
             </>
         )
     }

@@ -11,7 +11,6 @@ class Dice extends react.Component{
 
         return(
             <div className="dice" style={{backgroundImage: `url(${url})`, backgroundSize: 'cover', animation:this.props.animation}}>
-        
             </div>
         )
     }

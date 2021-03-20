@@ -5,9 +5,7 @@ import Player from "./Player";
 
 class GameBoard extends react.Component{
     
-    constructor(props){
-        console.log("constructor");
-        
+    constructor(props){        
         super(props);
         this.state={
             scoreToWin:100,
@@ -74,6 +72,8 @@ class GameBoard extends react.Component{
     }
 
     NewGame=()=>{
+        let inputValue=document.getElementById("scoreInput");
+        inputValue.value='';
         let players=this.state.players;
         players.forEach((p)=>{p.currentScore=0;p.totalScore=0});
         this.setState({
@@ -81,6 +81,7 @@ class GameBoard extends react.Component{
             rightSide:'#fcd5ce',
             leftSide:'#f1aea6',
             popUpDisplay:'none',
+            gifDisplay:'none',
             dice:[0,0],
             playerTurn:1,
             winner:'',
@@ -90,16 +91,14 @@ class GameBoard extends react.Component{
 
     inputScore=(value)=>{
         this.setState({scoreToWin: value});
-        console.log("board",value);
     }
 
     closeButton=()=>{
-        this.setState({popUpDisplay:'none'})
         this.NewGame();
     }
 
+
     render(){
-        console.log("rander");
         return(
             <div>
                 <div className="GameBoard">
